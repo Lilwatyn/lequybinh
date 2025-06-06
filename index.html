@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <link rel="shortcut icon" href="https://i.pinimg.com/736x/6e/b8/35/6eb83597dbd8f52f1d1de9fca8176252.jpg">
+    <meta charset="UTF-8">
+    <title>Youngboiseetinh</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+<body>
+    
+    <section>
+        <div class="container">
+            <div class="icons">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </div>
+
+            <div class="time" id="clock">
+                <div class="extra-text">Lilwatyn</div>
+                <div class="clock-text">
+                    <div class="line1">Nhìn mặt thằng chó đó có cái</div>
+                    <div class="line2">đếch gì hơn anh</div>
+                </div>
+                <img src="https://i.pinimg.com/736x/6e/b8/35/6eb83597dbd8f52f1d1de9fca8176252.jpg" alt="Pinterest Image" class="center-icon">
+                <div class="time-colon">
+                    <div class="time-text">
+                        <span class="num hour_num">08</span>
+                        <span class="text">Hours</span>
+                    </div>
+                    <span class="colon">:</span>
+                </div>
+                <div class="time-colon">
+                    <div class="time-text">
+                        <span class="num min_num">45</span>
+                        <span class="text">Minutes</span>
+                    </div>
+                    <span class="colon">:</span>
+                </div>
+                <div class="time-colon">
+                    <div class="time-text">
+                        <span class="num sec_num">06</span>
+                        <span class="text">Seconds</span>
+                    </div>
+                    <span class="am_pm">AM</span>
+                </div>
+                <div class="iconsa">
+                    <a href="https://www.facebook.com/binhbo2007" class="icon-facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/q.uis_bin.h/" class="icon-instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://discord.gg/VCJUqJrEdA" class="icon-discord" target="_blank"><i class="fab fa-discord"></i></a>
+                    <a href="https://github.com/Lilwatyn" class="icon-github" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://open.spotify.com/user/31tib5w3inxerozimvnotrv5qefa" class="icon-spotify" target="_blank"><i class="fab fa-spotify"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        setInterval(() => {
+            let date = new Date(),
+            hour = date.getHours(),
+            min = date.getMinutes(),
+            sec = date.getSeconds();
+
+            let d;
+            d = hour < 12 ? "AM" : "PM"; 
+            hour = hour > 12 ? hour - 12 : hour;
+            hour = hour == 0 ? hour = 12 : hour;
+
+            hour = hour < 10 ? "0" + hour : hour;
+            min = min < 10 ? "0" + min : min;
+            sec = sec < 10 ? "0" + sec : sec;
+
+            document.querySelector(".hour_num").innerText = hour;
+            document.querySelector(".min_num").innerText = min;
+            document.querySelector(".sec_num").innerText = sec;
+            document.querySelector(".am_pm").innerText = d;
+        }, 1000);
+
+        let section = document.querySelector("section"),
+        icons = document.querySelector(".icons"),
+        body = document.body;
+
+        const lightBackground = "url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3ljZHhsY2I5MXM5ajQ4ZWFhMTMxOWxkOTQwMHdycnJicW1oYms4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26uf7RM9Nb9WgpMv6/giphy.gif')";
+        const darkBackground = "url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHV0b3I0dHp2bGFpenUwbDcwdHYzdjVhc2JzYmg5cjYzc2F6ZzR3ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUPGcshrKRahaS8ef6/giphy.gif')";
+
+        body.style.backgroundImage = lightBackground;
+
+        icons.onclick = () => {
+        section.classList.toggle("dark");
+        document.querySelector('.fa-sun').classList.toggle('active');
+        document.querySelector('.fa-moon').classList.toggle('active');
+
+        const isDark = section.classList.contains("dark");
+    body.style.backgroundImage = isDark ? darkBackground : lightBackground;
+};
+    </script>
+
+</body>
+</html>
